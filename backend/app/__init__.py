@@ -9,11 +9,10 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
-    global mongo, client, genai_context
+    global mongo, client
 
     mongo = MongoClient(app.config['MONGO_URI']).get_default_database()
     client = genai.Client()
-    genai_context = app.config['MODEL_CONTEXT']
 
     register_blueprints(app)
 

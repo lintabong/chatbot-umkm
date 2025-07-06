@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from bson import ObjectId
 from bson.errors import InvalidId
-from app import mongo, client, genai_context
+from app import mongo
 from app.utils import date_utils
 from app.extensions import create_chat
 from google.genai import types
